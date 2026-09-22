@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ROUTINE O - 오픈 홍보 기획 대시보드</title>
+  <title>ROUTINE O - 오픈 홍보 기획 통합 대시보드</title>
+  
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Lucide Icons -->
+  <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  
   <script>
     tailwind.config = {
       theme: {
@@ -26,13 +28,17 @@
       }
     }
   </script>
+  
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;700;800&display=swap');
+    
     body {
-      font-family: 'Pretendard', sans-serif;
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
       background-color: #F4F7F5;
       color: #1C2922;
+      scroll-behavior: smooth;
     }
+    
     .custom-scrollbar::-webkit-scrollbar {
       width: 6px;
       height: 6px;
@@ -41,42 +47,51 @@
       background: #E8EFEA;
     }
     .custom-scrollbar::-webkit-scrollbar-thumb {
-      background: #A3C1AD;
+      background: #2D5A43;
       border-radius: 4px;
     }
+    
     .aspect-shorts {
       aspect-ratio: 9 / 16;
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
     }
   </style>
 </head>
 <body class="min-h-screen flex flex-col custom-scrollbar">
 
   <!-- Header Navigation -->
-  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200">
+  <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
         <div class="flex items-center gap-3">
-          <div class="bg-brand-green text-white font-bold text-xl px-3 py-1 rounded-lg tracking-wider">
-            ROUTINE O
+          <div class="bg-brand-green text-white font-extrabold text-lg sm:text-xl px-3.5 py-1 rounded-xl tracking-wider shadow-sm flex items-center gap-2">
+            <span>ROUTINE O</span>
           </div>
-          <span class="text-xs font-semibold px-2.5 py-1 bg-green-100 text-brand-green rounded-full hidden sm:inline-block">
+          <span class="text-[11px] font-bold px-2.5 py-1 bg-emerald-100 text-brand-green rounded-full hidden md:inline-block">
             MOVE. EAT. FLOW.
           </span>
         </div>
         
         <!-- Navigation Links -->
-        <nav class="hidden md:flex space-x-6 text-sm font-medium">
-          <a href="#overview" class="text-gray-700 hover:text-brand-green transition">캠페인 개요</a>
-          <a href="#strategy" class="text-gray-700 hover:text-brand-green transition">핵심 전략</a>
-          <a href="#content-strategy" class="text-brand-green font-bold border-b-2 border-brand-green pb-1">콘텐츠 & 쇼츠</a>
-          <a href="#simulator" class="text-gray-700 hover:text-brand-green transition">루틴 체험</a>
-          <a href="#checklist" class="text-gray-700 hover:text-brand-green transition">실행 체크리스트</a>
-          <a href="#funnel" class="text-gray-700 hover:text-brand-green transition">성과 진단</a>
+        <nav class="hidden lg:flex space-x-6 text-xs font-semibold text-gray-600">
+          <a href="#overview" class="hover:text-brand-green transition">01. 개요</a>
+          <a href="#strategy" class="hover:text-brand-green transition">02. 커뮤니케이션 전략</a>
+          <a href="#content-strategy" class="hover:text-brand-green transition">03. 쇼츠 & 콘텐츠</a>
+          <a href="#simulator" class="hover:text-brand-green transition">04. 루틴 시뮬레이터</a>
+          <a href="#checklist" class="hover:text-brand-green transition">05. 실행 체크리스트</a>
+          <a href="#funnel" class="hover:text-brand-green transition">06. 성과 진단</a>
         </nav>
 
-        <a href="#simulator" class="bg-brand-accent hover:bg-orange-600 text-white text-xs sm:text-sm font-bold px-4 py-2 rounded-lg transition flex items-center gap-1 shadow-md">
+        <!-- CTA Action Button -->
+        <a href="#simulator" class="bg-brand-accent hover:bg-orange-600 text-white text-xs font-bold px-4 py-2 rounded-xl transition flex items-center gap-1.5 shadow-md">
           <i data-lucide="play-circle" class="w-4 h-4"></i>
-          <span>시뮬레이터 실행</span>
+          <span>시뮬레이터 체험</span>
         </a>
       </div>
     </div>
@@ -85,109 +100,114 @@
   <!-- Hero Section -->
   <section class="relative bg-brand-dark text-white py-12 lg:py-20 overflow-hidden">
     <div class="absolute inset-0 opacity-20">
-      <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&q=80&w=1600" alt="" class="w-full h-full object-cover">
+      <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&q=80&w=1600" alt="Background" class="w-full h-full object-cover">
     </div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid lg:grid-cols-12 gap-8 items-center">
-        <div class="lg:col-span-7 space-y-4">
+        
+        <div class="lg:col-span-7 space-y-5">
           <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-green/80 rounded-full text-xs font-semibold text-emerald-200 border border-emerald-500/30">
             <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
-            <span>오픈 홍보 기획서 마스터 플랜</span>
+            <span>통합 오픈 캠페인 마스터 플랜</span>
           </div>
           <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
             기다림 때문에 흐트러졌던 아침,<br>
             <span class="text-emerald-400">계획 가능한 루틴</span>으로 완성하다
           </h1>
-          <p class="text-gray-300 text-sm sm:text-base max-w-2xl font-light leading-relaxed">
-            운동 ➔ 샤워 ➔ 건강식 픽업 ➔ 출근까지 단 하나의 흐름으로! <br class="hidden sm:inline">
+          <p class="text-gray-300 text-xs sm:text-sm max-w-2xl font-light leading-relaxed">
+            운동 ➔ 샤워 ➔ 건강식 픽업 ➔ 출근까지 단 하나의 끊김 없는 흐름으로!<br class="hidden sm:inline">
             샤워하는 시간을 내 정비 시간으로 바꾸는 ROUTINE O의 통합 홍보 캠페인 전략 대시보드입니다.
           </p>
+          
           <div class="pt-2 flex flex-wrap gap-3">
-            <a href="#content-strategy" class="bg-brand-green hover:bg-emerald-700 text-white font-bold px-5 py-2.5 rounded-lg text-sm transition flex items-center gap-2">
+            <a href="#content-strategy" class="bg-brand-green hover:bg-emerald-700 text-white font-bold px-5 py-2.5 rounded-xl text-xs sm:text-sm transition flex items-center gap-2 shadow-lg">
               <i data-lucide="video" class="w-4 h-4"></i>
               <span>60초 쇼츠 비디오 보기</span>
             </a>
-            <a href="#overview" class="bg-white/10 hover:bg-white/20 text-white font-semibold px-5 py-2.5 rounded-lg text-sm transition border border-white/20">
+            <a href="#overview" class="bg-white/10 hover:bg-white/20 text-white font-semibold px-5 py-2.5 rounded-xl text-xs sm:text-sm transition border border-white/20">
               캠페인 요약 보기
             </a>
           </div>
         </div>
 
         <div class="lg:col-span-5">
-          <div class="bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/20 shadow-2xl space-y-3">
-            <div class="flex items-center justify-between text-xs text-emerald-300 font-semibold border-b border-white/10 pb-2">
+          <div class="bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/20 shadow-2xl space-y-4">
+            <div class="flex items-center justify-between text-xs text-emerald-300 font-bold border-b border-white/10 pb-2.5">
               <span>F&B × FITNESS INTEGRATED FLOW</span>
-              <span class="text-orange-400 font-bold">오픈 준비중</span>
+              <span class="text-orange-400 font-extrabold bg-orange-950/60 px-2 py-0.5 rounded">오픈 준비중</span>
             </div>
-            <div class="grid grid-cols-4 gap-2 text-center py-2">
-              <div class="bg-white/5 p-2 rounded-lg">
+            
+            <div class="grid grid-cols-4 gap-2 text-center py-1">
+              <div class="bg-white/5 p-2.5 rounded-xl border border-white/5">
                 <i data-lucide="dumbbell" class="w-5 h-5 mx-auto text-emerald-400 mb-1"></i>
-                <div class="text-xs font-bold">01. 운동</div>
+                <div class="text-[11px] font-bold">01. 운동</div>
               </div>
-              <div class="bg-white/5 p-2 rounded-lg">
+              <div class="bg-white/5 p-2.5 rounded-xl border border-white/5">
                 <i data-lucide="shower-head" class="w-5 h-5 mx-auto text-blue-400 mb-1"></i>
-                <div class="text-xs font-bold">02. 샤워</div>
+                <div class="text-[11px] font-bold">02. 샤워</div>
               </div>
-              <div class="bg-white/5 p-2 rounded-lg">
+              <div class="bg-white/5 p-2.5 rounded-xl border border-white/5">
                 <i data-lucide="utensils" class="w-5 h-5 mx-auto text-orange-400 mb-1"></i>
-                <div class="text-xs font-bold">03. 픽업</div>
+                <div class="text-[11px] font-bold">03. 픽업</div>
               </div>
-              <div class="bg-white/5 p-2 rounded-lg">
+              <div class="bg-white/5 p-2.5 rounded-xl border border-white/5">
                 <i data-lucide="briefcase" class="w-5 h-5 mx-auto text-purple-400 mb-1"></i>
-                <div class="text-xs font-bold">04. 출근</div>
+                <div class="text-[11px] font-bold">04. 출근</div>
               </div>
             </div>
-            <p class="text-xs text-gray-300 bg-black/30 p-2.5 rounded-lg text-center">
+            
+            <div class="bg-black/40 p-3 rounded-xl border border-white/10 text-xs text-center text-gray-300">
               "더 빠른 음식이 아닌, <span class="text-emerald-300 font-bold">시간을 예측할 수 있는 경험</span>을 제공합니다."
-            </p>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
   </section>
 
   <!-- Main Content Area -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
 
     <!-- 01. Campaign Overview Section -->
     <section id="overview" class="scroll-mt-20">
       <div class="flex items-center gap-2 mb-6">
-        <div class="w-2 h-6 bg-brand-green rounded-full"></div>
+        <div class="w-2.5 h-6 bg-brand-green rounded-full"></div>
         <h2 class="text-2xl font-bold text-brand-dark">01. 캠페인 개요 (Overview)</h2>
       </div>
 
       <div class="grid md:grid-cols-3 gap-6">
         <!-- Card 1 -->
-        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-3">
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-3 hover:shadow-md transition">
           <div class="w-10 h-10 bg-emerald-50 text-brand-green rounded-xl flex items-center justify-center">
             <i data-lucide="target" class="w-5 h-5"></i>
           </div>
-          <h3 class="text-lg font-bold">핵심 타깃 & 페인포인트</h3>
-          <p class="text-xs text-gray-500 leading-relaxed">
+          <h3 class="text-base font-bold text-gray-800">핵심 타깃 & 페인포인트</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
             <strong>30대 직장인</strong> (출근 전 운동과 건강식을 모두 챙기려는 사람들)<br>
             조리 완료 시간을 알 수 없어 초조하게 기다리거나 출근 루틴이 깨지는 문제 해결
           </p>
         </div>
 
         <!-- Card 2 -->
-        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-3">
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-3 hover:shadow-md transition">
           <div class="w-10 h-10 bg-orange-50 text-brand-accent rounded-xl flex items-center justify-center">
             <i data-lucide="zap" class="w-5 h-5"></i>
           </div>
-          <h3 class="text-lg font-bold">핵심 가치 & 메시지</h3>
-          <p class="text-xs text-gray-500 leading-relaxed">
+          <h3 class="text-base font-bold text-gray-800">핵심 가치 & 메시지</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
             <strong>시간 예측 가능성 + 건강한 식사 + 끊김 없는 동선</strong><br>
             "기다림 때문에 흐트러졌던 아침 루틴을, <span class="text-brand-green font-bold">계획 가능한 루틴</span>으로."
           </p>
         </div>
 
         <!-- Card 3 -->
-        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-3">
+        <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-3 hover:shadow-md transition">
           <div class="w-10 h-10 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center">
             <i data-lucide="git-merge" class="w-5 h-5"></i>
           </div>
-          <h3 class="text-lg font-bold">고객 퍼널 전환 구조</h3>
-          <p class="text-xs text-gray-500 leading-relaxed">
+          <h3 class="text-base font-bold text-gray-800">고객 퍼널 전환 구조</h3>
+          <p class="text-xs text-gray-600 leading-relaxed">
             <strong>콘텐츠 접촉 ➔ 앱/QR 유입 ➔ 사전 주문 ➔ 픽업 ➔ 재이용</strong><br>
             온라인 콘텐츠로 공감하고 오프라인 현장 QR로 즉시 주문 행동 유도
           </p>
@@ -198,33 +218,33 @@
     <!-- 02. Core Strategy (AS-IS vs TO-BE) -->
     <section id="strategy" class="scroll-mt-20">
       <div class="flex items-center gap-2 mb-6">
-        <div class="w-2 h-6 bg-brand-green rounded-full"></div>
+        <div class="w-2.5 h-6 bg-brand-green rounded-full"></div>
         <h2 class="text-2xl font-bold text-brand-dark">02. 타깃 및 커뮤니케이션 전략</h2>
       </div>
 
       <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100">
-        <h3 class="text-base font-bold text-gray-700 mb-4 flex items-center gap-2">
-          <i data-lucide="repeat" class="w-4 h-4 text-brand-green"></i>
+        <h3 class="text-base font-bold text-gray-800 mb-6 flex items-center gap-2">
+          <i data-lucide="repeat" class="w-5 h-5 text-brand-green"></i>
           <span>고객 아침 루틴의 변화 (AS-IS vs TO-BE)</span>
         </h3>
 
         <div class="grid md:grid-cols-2 gap-6">
           <!-- AS-IS -->
-          <div class="bg-rose-50/60 p-5 rounded-xl border border-rose-100 space-y-3">
-            <div class="flex items-center justify-between text-xs font-bold text-rose-600">
+          <div class="bg-rose-50/70 p-5 sm:p-6 rounded-2xl border border-rose-100 space-y-4">
+            <div class="flex items-center justify-between text-xs font-bold text-rose-600 border-b border-rose-200/60 pb-2">
               <span>BEFORE: AS-IS</span>
-              <span>기다림과 초조함</span>
+              <span class="bg-rose-100 px-2 py-0.5 rounded">기다림과 초조함</span>
             </div>
-            <ul class="space-y-2.5 text-xs text-gray-700">
-              <li class="flex items-start gap-2">
+            <ul class="space-y-3 text-xs text-gray-700">
+              <li class="flex items-start gap-2.5">
                 <i data-lucide="x-circle" class="w-4 h-4 text-rose-500 shrink-0 mt-0.5"></i>
                 <span>운동 후 식사 주문 ➔ 조리 완료 시간을 알 수 없음</span>
               </li>
-              <li class="flex items-start gap-2">
+              <li class="flex items-start gap-2.5">
                 <i data-lucide="x-circle" class="w-4 h-4 text-rose-500 shrink-0 mt-0.5"></i>
-                <span>매장에서 불확실하게 기다리며 아까운 시간 낭비</span>
+                <span>매장에서 불확실하게 기다리며 아까운 아침 시간 낭비</span>
               </li>
-              <li class="flex items-start gap-2">
+              <li class="flex items-start gap-2.5">
                 <i data-lucide="x-circle" class="w-4 h-4 text-rose-500 shrink-0 mt-0.5"></i>
                 <span>출근 시간 압박으로 결국 아침 식사 포기 및 지각 위기</span>
               </li>
@@ -232,22 +252,22 @@
           </div>
 
           <!-- TO-BE -->
-          <div class="bg-emerald-50/60 p-5 rounded-xl border border-emerald-100 space-y-3">
-            <div class="flex items-center justify-between text-xs font-bold text-brand-green">
+          <div class="bg-emerald-50/70 p-5 sm:p-6 rounded-2xl border border-emerald-100 space-y-4">
+            <div class="flex items-center justify-between text-xs font-bold text-brand-green border-b border-emerald-200/60 pb-2">
               <span>AFTER: TO-BE (ROUTINE O)</span>
-              <span>계획 가능한 루틴</span>
+              <span class="bg-emerald-100 px-2 py-0.5 rounded">계획 가능한 루틴</span>
             </div>
-            <ul class="space-y-2.5 text-xs text-gray-700">
-              <li class="flex items-start gap-2">
-                <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-green shrink-0 mt-0.5"></i>
+            <ul class="space-y-3 text-xs text-gray-700">
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-brand-green shrink-0 mt-0.5"></i>
                 <span>샤워 전 앱으로 원하는 시간에 사전 예약 주문</span>
               </li>
-              <li class="flex items-start gap-2">
-                <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-green shrink-0 mt-0.5"></i>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-brand-green shrink-0 mt-0.5"></i>
                 <span>파우더룸 및 스마트폰 화면으로 실시간 조리 현황 확인</span>
               </li>
-              <li class="flex items-start gap-2">
-                <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-green shrink-0 mt-0.5"></i>
+              <li class="flex items-start gap-2.5">
+                <i data-lucide="check-circle" class="w-4 h-4 text-brand-green shrink-0 mt-0.5"></i>
                 <span>샤워 후 갓 준비된 건강식 픽업하여 여유롭게 출근</span>
               </li>
             </ul>
@@ -259,26 +279,65 @@
     <!-- 03. Content Strategy & 9:16 Shorts Video -->
     <section id="content-strategy" class="scroll-mt-20">
       <div class="flex items-center gap-2 mb-6">
-        <div class="w-2 h-6 bg-brand-green rounded-full"></div>
-        <h2 class="text-2xl font-bold text-brand-dark">03. 홍보 콘텐츠 운영 & 9:16 쇼츠 비디오</h2>
+        <div class="w-2.5 h-6 bg-brand-green rounded-full"></div>
+        <h2 class="text-2xl font-bold text-brand-dark">03. 홍보 콘텐츠 운영 & 9:16 쇼츠 플레이어</h2>
       </div>
 
       <!-- Content Strategy Grid -->
-      <div class="grid md:grid-cols-3 gap-6 mb-12">
-        <div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
-          <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded">1. 쇼츠 (Shorts)</span>
-          <h4 class="font-bold text-sm mt-2 mb-1">공감 & 관심 (Hooking)</h4>
-          <p class="text-xs text-gray-500">60초 안에 타깃의 불편함을 자극하고 해결 경험을 직접 직관적으로 전달</p>
+      <div class="grid md:grid-cols-3 gap-6 mb-8">
+        <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm space-y-2">
+          <span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full">1. 쇼츠 (Shorts)</span>
+          <h4 class="font-bold text-sm text-gray-800">공감 & 관심 (Hooking)</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">60초 안에 타깃의 불편함을 자극하고 해결 경험을 직접 직관적으로 전달</p>
         </div>
-        <div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
-          <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">2. 카드뉴스 (6 Cards)</span>
-          <h4 class="font-bold text-sm mt-2 mb-1">이해 & 가치 설득</h4>
-          <p class="text-xs text-gray-500">문제 인식부터 조리현황 확인, 영양 큐레이션, 앱 유입 CTA까지 단계별 진행</p>
+        <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm space-y-2">
+          <span class="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full">2. 카드뉴스 (6 Cards)</span>
+          <h4 class="font-bold text-sm text-gray-800">이해 & 가치 설득</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">문제 인식부터 조리현황 확인, 영양 큐레이션, 앱 유입 CTA까지 단계별 진행</p>
         </div>
-        <div class="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
-          <span class="text-xs font-bold text-purple-600 bg-purple-50 px-2 py-1 rounded">3. 포스터 (QR)</span>
-          <h4 class="font-bold text-sm mt-2 mb-1">현장 인지 & 행동 전환</h4>
-          <p class="text-xs text-gray-500">피트니스, 락커/파우더룸, F&B 매장에서 즉시 QR 스캔 후 주문으로 연결</p>
+        <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm space-y-2">
+          <span class="text-xs font-bold text-purple-600 bg-purple-50 px-2.5 py-1 rounded-full">3. 포스터 (QR)</span>
+          <h4 class="font-bold text-sm text-gray-800">현장 인지 & 행동 전환</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">피트니스, 락커/파우더룸, F&B 매장에서 즉시 QR 스캔 후 주문으로 연결</p>
+        </div>
+      </div>
+
+      <!-- Interactive Card News Viewer -->
+      <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 mb-8 space-y-4">
+        <div class="flex items-center justify-between">
+          <h3 class="text-base font-bold text-gray-800 flex items-center gap-2">
+            <i data-lucide="layers" class="w-5 h-5 text-brand-green"></i>
+            <span>카드뉴스 슬라이드 미리보기 (총 6장)</span>
+          </h3>
+          <span class="text-xs font-bold text-gray-500" id="cardNewsIndex">1 / 6</span>
+        </div>
+
+        <div class="bg-brand-bgLight p-6 rounded-xl border border-gray-200 flex flex-col md:flex-row gap-6 items-center" id="cardNewsViewer">
+          <!-- Card Image Container -->
+          <div class="w-full md:w-1/3 shrink-0 flex justify-center">
+            <div class="relative w-full max-w-[280px] aspect-square rounded-2xl overflow-hidden shadow-md border border-gray-200 bg-white">
+              <img id="cardImage" src="카드뉴스1.png" alt="카드뉴스 1" class="w-full h-full object-cover transition-all duration-300" onerror="this.onerror=null; this.src='https://placehold.co/600x600/2D5A43/FFFFFF?text=카드뉴스+1';">
+            </div>
+          </div>
+
+          <!-- Card Content & Navigation -->
+          <div class="w-full md:w-2/3 flex flex-col justify-between space-y-4">
+            <div>
+              <span class="text-[10px] font-extrabold text-white bg-brand-green px-2.5 py-1 rounded-full" id="cardTag">CARD 1. HOOK</span>
+              <h4 class="text-base sm:text-lg font-bold text-brand-dark mt-3" id="cardTitle">운동 후 식사 기다리다 지각할 뻔한 적 있나요?</h4>
+              <p class="text-xs sm:text-sm text-gray-600 mt-2 leading-relaxed" id="cardDesc">
+                바쁜 출근길, 갓 만든 건강식을 챙기고 싶지만 조리 완료 시간을 알 수 없어 초조했던 경험. 이제 아침을 낭비하지 마세요.
+              </p>
+            </div>
+            <div class="flex justify-between items-center pt-4 border-t border-gray-200/60 mt-auto">
+              <button onclick="prevCard()" class="text-xs font-bold text-gray-700 hover:text-brand-green flex items-center gap-1 bg-white px-3.5 py-2 rounded-xl border border-gray-200 shadow-sm transition">
+                ← 이전 카드
+              </button>
+              <button onclick="nextCard()" class="text-xs font-bold text-white bg-brand-green hover:bg-emerald-700 flex items-center gap-1 px-4 py-2 rounded-xl shadow transition">
+                다음 카드 →
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -289,12 +348,12 @@
           <span>쇼츠 타임라인 스토리보드 (60초 구성)</span>
         </h3>
 
-        <div class="overflow-x-auto">
+        <div class="overflow-x-auto custom-scrollbar">
           <table class="w-full text-left border-collapse text-xs">
             <thead>
               <tr class="bg-gray-50 border-b border-gray-200 text-gray-600">
-                <th class="p-3 font-semibold w-16">구간</th>
-                <th class="p-3 font-semibold w-24">단계</th>
+                <th class="p-3 font-semibold w-20">구간</th>
+                <th class="p-3 font-semibold w-28">단계</th>
                 <th class="p-3 font-semibold">시각적 연출 (Visual)</th>
                 <th class="p-3 font-semibold">메시지 & 자막 (Copy)</th>
               </tr>
@@ -304,142 +363,140 @@
                 <td class="p-3 text-brand-accent font-bold">00~10s</td>
                 <td class="p-3 font-semibold">01. HOOK</td>
                 <td class="p-3 text-gray-600">운동 후 시계를 보며 초조하게 음식 대기하는 직장인</td>
-                <td class="p-3 font-medium">"운동 끝나고 샐러드 나오길 기다리다 출근길 망친 적 있으시죠?"</td>
+                <td class="p-3 font-medium text-gray-800">"운동 끝나고 샐러드 나오길 기다리다 출근길 망친 적 있으시죠?"</td>
               </tr>
               <tr>
                 <td class="p-3 text-brand-green font-bold">10~20s</td>
                 <td class="p-3 font-semibold">02. PRE-ORDER</td>
                 <td class="p-3 text-gray-600">샤워실 들어가기 전 스마트폰/스마트워치 터치 한번으로 사전 주문</td>
-                <td class="p-3 font-medium">"이젠 샤워 전 앱으로 원하는 시간에 사전 주문하세요."</td>
+                <td class="p-3 font-medium text-gray-800">"이젠 샤워 전 앱으로 원하는 시간에 사전 주문하세요."</td>
               </tr>
               <tr>
                 <td class="p-3 text-blue-600 font-bold">20~35s</td>
                 <td class="p-3 font-semibold">03. STATUS</td>
                 <td class="p-3 text-gray-600">파우더룸 거울 모니터에 실시간 조리완료(Cooking Complete) 알림</td>
-                <td class="p-3 font-medium">"파우더룸 화면으로 내 맞춤 건강식이 딱 맞춰 준비됩니다."</td>
+                <td class="p-3 font-medium text-gray-800">"파우더룸 화면으로 내 맞춤 건강식이 딱 맞춰 준비됩니다."</td>
               </tr>
               <tr>
                 <td class="p-3 text-purple-600 font-bold">35~45s</td>
                 <td class="p-3 font-semibold">04. BENEFIT</td>
                 <td class="p-3 text-gray-600">락커룸을 나와 대기 없이 보울 픽업 후 여유롭게 이동</td>
-                <td class="p-3 font-medium">"기다림 제로! 음식이 준비되는 동안 내 정비 시간을 갖는 효율"</td>
+                <td class="p-3 font-medium text-gray-800">"기다림 제로! 음식이 준비되는 동안 내 정비 시간을 갖는 효율"</td>
               </tr>
               <tr>
                 <td class="p-3 text-emerald-600 font-bold">45~55s</td>
                 <td class="p-3 font-semibold">05. HEALTH</td>
                 <td class="p-3 text-gray-600">저당/고단백 수비드 닭가슴살 & 아보카도 보울 클로즈업</td>
-                <td class="p-3 font-medium">"갓생 직장인을 위한 정교한 영양 큐레이션 식단"</td>
+                <td class="p-3 font-medium text-gray-800">"갓생 직장인을 위한 정교한 영양 큐레이션 식단"</td>
               </tr>
               <tr>
                 <td class="p-3 text-gray-800 font-bold">55~60s</td>
                 <td class="p-3 font-semibold">06. BRAND</td>
                 <td class="p-3 text-gray-600">ROUTINE O 브랜드 로고 및 '지금 앱 다운로드' QR 노출</td>
-                <td class="p-3 font-medium">"운동·식사·출근이 하나로! ROUTINE O"</td>
+                <td class="p-3 font-medium text-gray-800">"운동·식사·출근이 하나로! ROUTINE O"</td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
 
-      <!-- NEW: 9:16 Shorts Video Container (Requested) -->
+      <!-- 9:16 Shorts Video Container -->
       <div class="bg-brand-dark p-6 sm:p-8 rounded-3xl text-white shadow-xl">
         <div class="max-w-4xl mx-auto">
           <div class="text-center mb-6">
-            <span class="text-xs font-bold bg-brand-accent px-3 py-1 rounded-full text-white uppercase tracking-widest">
-              Campaign Shorts Video
+            <span class="text-[10px] font-extrabold bg-brand-accent px-3 py-1 rounded-full text-white uppercase tracking-widest">
+              Campaign Shorts Player
             </span>
             <h3 class="text-xl sm:text-2xl font-extrabold mt-2">
               🎬 ROUTINE O 오픈 홍보 60초 쇼츠 (MV.mp4)
             </h3>
-            <p class="text-xs sm:text-sm text-gray-400 mt-1">
-              "시간을 기다리지 마세요. 지금, 당신의 루틴을 완성하세요!" (9:16 세로형 쇼츠)
+            <p class="text-xs text-gray-400 mt-1">
+              "시간을 기다리지 마세요. 지금, 당신의 루틴을 완성하세요!"
             </p>
           </div>
 
           <div class="flex justify-center">
             <!-- 9:16 Smartphone Mockup Video Frame -->
-            <div class="relative w-full max-w-[320px] aspect-shorts bg-black rounded-[40px] p-3 border-4 border-gray-800 shadow-2xl ring-1 ring-white/10 overflow-hidden flex flex-col justify-between">
+            <div class="relative w-full max-w-[320px] aspect-shorts bg-black rounded-[36px] p-2.5 border-4 border-gray-800 shadow-2xl ring-1 ring-white/10 overflow-hidden flex flex-col justify-between">
               
-              <!-- Phone Notch / Camera Top -->
-              <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-5 bg-gray-900 rounded-b-xl z-30 flex items-center justify-center gap-2">
-                <div class="w-2.5 h-2.5 rounded-full bg-black border border-gray-700"></div>
-                <div class="w-10 h-1 bg-gray-800 rounded-full"></div>
+              <!-- Phone Notch -->
+              <div class="absolute top-0 left-1/2 -translate-x-1/2 w-28 h-4 bg-gray-900 rounded-b-xl z-30 flex items-center justify-center gap-2">
+                <div class="w-2 h-2 rounded-full bg-black border border-gray-700"></div>
+                <div class="w-8 h-1 bg-gray-800 rounded-full"></div>
               </div>
 
               <!-- Top UI Layer -->
               <div class="relative z-20 flex justify-between items-center text-xs text-white pt-4 px-2 bg-gradient-to-b from-black/80 to-transparent">
                 <div class="flex items-center gap-1 font-bold text-emerald-400">
                   <i data-lucide="zap" class="w-3.5 h-3.5"></i>
-                  <span>ROUTINE O Shorts</span>
+                  <span>ROUTINE O</span>
                 </div>
                 <div class="flex items-center gap-2 text-gray-300 text-[10px]">
-                  <span>HD 9:16</span>
+                  <span id="playerModeBadge" class="bg-emerald-900/80 px-1.5 py-0.5 rounded text-emerald-300">Live Player</span>
                   <i data-lucide="wifi" class="w-3 h-3"></i>
                 </div>
               </div>
 
-              <!-- Video Screen / Canvas Fallback -->
+              <!-- Video Screen & Canvas Simulation -->
               <div class="absolute inset-0 z-10 bg-black flex items-center justify-center overflow-hidden">
-                <!-- Real Video Element (MV.mp4) -->
-                <video id="shortsVideo" class="w-full h-full object-cover" playsinline loop muted poster="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&q=80&w=600">
-                  <source src="MV.mp4" type="video/mp4">
-                  브라우저가 비디오 태그를 지원하지 않습니다.
+                <!-- HTML5 Video Element -->
+                <video id="shortsVideo" class="w-full h-full object-cover" playsinline loop muted src="MV.mp4" poster="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&q=80&w=600">
                 </video>
 
-                <!-- Interactive Fallback Player Canvas (Activated if MV.mp4 file fails or not found) -->
-                <div id="videoFallback" class="absolute inset-0 bg-gradient-to-b from-emerald-950 via-brand-dark to-black hidden flex-col items-center justify-center p-4 text-center">
+                <!-- Interactive Fallback Canvas Simulation (Active when MV.mp4 is absent) -->
+                <div id="videoFallback" class="absolute inset-0 bg-gradient-to-b from-emerald-950 via-brand-dark to-black flex flex-col items-center justify-center p-4 text-center">
                   <canvas id="shortsCanvas" class="absolute inset-0 w-full h-full opacity-40"></canvas>
-                  <div class="relative z-10 space-y-3">
-                    <div class="w-12 h-12 bg-brand-green/80 rounded-full flex items-center justify-center mx-auto text-white shadow-lg animate-pulse">
-                      <i data-lucide="play" class="w-6 h-6 fill-current"></i>
+                  <div class="relative z-10 space-y-2">
+                    <div class="w-12 h-12 bg-brand-green/80 rounded-full flex items-center justify-center mx-auto text-white shadow-lg">
+                      <i data-lucide="sparkles" class="w-6 h-6 animate-pulse"></i>
                     </div>
                     <div>
-                      <p class="text-xs font-bold text-emerald-300">MV.mp4 시뮬레이션 모드</p>
-                      <p class="text-[10px] text-gray-400 mt-0.5">실제 서버에 MV.mp4 파일이 위치하면 자동 로드됩니다.</p>
+                      <p class="text-xs font-bold text-emerald-300">쇼츠 인터랙티브 시뮬레이션</p>
+                      <p class="text-[10px] text-gray-400 mt-0.5">실제 MV.mp4 로드 준비 완료</p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <!-- Overlay Text & Bottom Subtitle (Simulated Shorts Caption) -->
-              <div class="relative z-20 mt-auto pb-4 px-3 space-y-2 bg-gradient-to-t from-black/90 via-black/40 to-transparent text-left">
+              <!-- Overlay Text & Storyboard Subtitle -->
+              <div class="relative z-20 mt-auto pb-3 px-2.5 space-y-2 bg-gradient-to-t from-black/90 via-black/40 to-transparent text-left">
                 <!-- Floating Side Action Icons -->
                 <div class="absolute right-2 bottom-12 flex flex-col gap-3 items-center text-white text-[10px]">
-                  <button class="hover:scale-110 transition flex flex-col items-center">
+                  <div class="flex flex-col items-center">
                     <div class="w-8 h-8 rounded-full bg-white/20 backdrop-blur flex items-center justify-center">
                       <i data-lucide="heart" class="w-4 h-4 text-rose-500 fill-rose-500"></i>
                     </div>
                     <span class="mt-0.5 font-bold">2.4k</span>
-                  </button>
-                  <button class="hover:scale-110 transition flex flex-col items-center">
+                  </div>
+                  <div class="flex flex-col items-center">
                     <div class="w-8 h-8 rounded-full bg-white/20 backdrop-blur flex items-center justify-center">
                       <i data-lucide="message-circle" class="w-4 h-4"></i>
                     </div>
                     <span class="mt-0.5">182</span>
-                  </button>
-                  <button class="hover:scale-110 transition flex flex-col items-center">
+                  </div>
+                  <div class="flex flex-col items-center">
                     <div class="w-8 h-8 rounded-full bg-white/20 backdrop-blur flex items-center justify-center">
                       <i data-lucide="share-2" class="w-4 h-4"></i>
                     </div>
                     <span class="mt-0.5">공유</span>
-                  </button>
+                  </div>
                 </div>
 
-                <!-- Live Storyboard Caption Overlay -->
+                <!-- Live Subtitle Overlay -->
                 <div class="pr-10">
                   <div class="inline-block px-2 py-0.5 bg-emerald-600/90 rounded text-[9px] font-bold text-white mb-1" id="shortsCurrentStage">
                     01. HOOK (00~10s)
                   </div>
-                  <p class="text-xs font-bold text-white leading-tight drop-shadow-md" id="shortsSubtitle">
+                  <p class="text-xs font-bold text-white leading-snug drop-shadow" id="shortsSubtitle">
                     "운동 끝나고 샐러드 나오길 초조하게 기다리다 출근길 망친 적 있으시죠?"
                   </p>
-                  <div class="flex items-center gap-1 mt-1 text-[10px] text-emerald-300 font-semibold">
+                  <div class="flex items-center gap-1 mt-1 text-[10px] text-emerald-300 font-medium">
                     <i data-lucide="music" class="w-3 h-3"></i>
-                    <span>ROUTINE O - Official Campaign Sound</span>
+                    <span>ROUTINE O - Official Sound</span>
                   </div>
                 </div>
 
-                <!-- Video Control Buttons -->
+                <!-- Player Controls -->
                 <div class="flex items-center justify-between pt-2 border-t border-white/10 text-xs">
                   <button id="playBtn" class="bg-brand-accent hover:bg-orange-600 text-white font-bold px-3 py-1.5 rounded-lg flex items-center gap-1 text-[11px] transition shadow">
                     <i data-lucide="play" class="w-3.5 h-3.5 fill-current"></i>
@@ -455,9 +512,6 @@
             </div>
           </div>
           
-          <p class="text-center text-xs text-gray-400 mt-4">
-            * <code class="bg-black/50 px-1.5 py-0.5 rounded text-emerald-400">MV.mp4</code> 파일이 같은 루트에 있으면 비디오가 즉시 플레이됩니다.
-          </p>
         </div>
       </div>
     </section>
@@ -465,38 +519,38 @@
     <!-- 04. Interactive Routine Simulator -->
     <section id="simulator" class="scroll-mt-20">
       <div class="flex items-center gap-2 mb-6">
-        <div class="w-2 h-6 bg-brand-green rounded-full"></div>
+        <div class="w-2.5 h-6 bg-brand-green rounded-full"></div>
         <h2 class="text-2xl font-bold text-brand-dark">04. 인터랙티브 아침 루틴 체험 시뮬레이터</h2>
       </div>
 
       <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-gray-100">
         <p class="text-xs text-gray-500 mb-6">
-          샤워 전 사전 주문부터 파우더룸 조리 확인, 픽업까지 ROUTINE O의 스마트한 동선을 직접 체험해보세요.
+          샤워 전 사전 주문부터 파우더룸 조리 확인, 픽업까지 ROUTINE O의 스마트한 동선을 직접 단계별로 클릭하여 체험해보세요.
         </p>
 
         <!-- Stepper Controls -->
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
-          <button onclick="setSimStep(1)" id="simTab1" class="p-3 rounded-xl border border-brand-green bg-emerald-50 text-brand-green font-bold text-xs flex flex-col items-center gap-1 transition">
+          <button onclick="setSimStep(1)" id="simTab1" class="p-3 rounded-xl border border-brand-green bg-emerald-50 text-brand-green font-bold text-xs flex flex-col items-center gap-1.5 transition">
             <i data-lucide="smartphone" class="w-5 h-5"></i>
             <span>1. 샤워 전 사전 주문</span>
           </button>
-          <button onclick="setSimStep(2)" id="simTab2" class="p-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-500 font-semibold text-xs flex flex-col items-center gap-1 transition">
+          <button onclick="setSimStep(2)" id="simTab2" class="p-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-500 font-semibold text-xs flex flex-col items-center gap-1.5 transition">
             <i data-lucide="shower-head" class="w-5 h-5"></i>
             <span>2. 샤워 & 정비</span>
           </button>
-          <button onclick="setSimStep(3)" id="simTab3" class="p-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-500 font-semibold text-xs flex flex-col items-center gap-1 transition">
+          <button onclick="setSimStep(3)" id="simTab3" class="p-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-500 font-semibold text-xs flex flex-col items-center gap-1.5 transition">
             <i data-lucide="tv" class="w-5 h-5"></i>
             <span>3. 조리 현황 확인</span>
           </button>
-          <button onclick="setSimStep(4)" id="simTab4" class="p-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-500 font-semibold text-xs flex flex-col items-center gap-1 transition">
+          <button onclick="setSimStep(4)" id="simTab4" class="p-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-500 font-semibold text-xs flex flex-col items-center gap-1.5 transition">
             <i data-lucide="shopping-bag" class="w-5 h-5"></i>
             <span>4. 대기 제로 픽업</span>
           </button>
         </div>
 
-        <!-- Simulator Display Screen -->
-        <div class="bg-brand-bgLight p-6 rounded-2xl border border-gray-200 min-h-[260px] flex items-center justify-center" id="simDisplay">
-          <!-- Step 1 Content (Default) -->
+        <!-- Simulator Screen -->
+        <div class="bg-brand-bgLight p-6 rounded-2xl border border-gray-200 min-h-[260px] flex items-center justify-center transition-all duration-300" id="simDisplay">
+          <!-- Step 1 Default -->
           <div class="text-center space-y-3 max-w-md">
             <div class="w-12 h-12 bg-emerald-100 text-brand-green rounded-full flex items-center justify-center mx-auto">
               <i data-lucide="clock" class="w-6 h-6"></i>
@@ -506,7 +560,7 @@
               앱으로 원하는 식사(수비드 닭가슴살 보울 & 단백질 스무디)를 선택하고 <br>
               <strong>픽업 시간(08:20)</strong>을 미리 설정하여 사전 예약 주문을 넣습니다.
             </p>
-            <div class="inline-block bg-brand-green text-white text-xs font-bold px-4 py-2 rounded-lg shadow">
+            <div class="inline-block bg-brand-green text-white text-xs font-bold px-4 py-2 rounded-xl shadow">
               예약 주문 완료 (픽업 예정: 08:20)
             </div>
           </div>
@@ -517,53 +571,56 @@
     <!-- 05. Checklist Section -->
     <section id="checklist" class="scroll-mt-20">
       <div class="flex items-center gap-2 mb-6">
-        <div class="w-2 h-6 bg-brand-green rounded-full"></div>
+        <div class="w-2.5 h-6 bg-brand-green rounded-full"></div>
         <h2 class="text-2xl font-bold text-brand-dark">05. 단계별 실행 체크리스트</h2>
       </div>
 
-      <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-        <div class="flex justify-between items-center mb-4">
-          <h3 class="text-base font-bold text-gray-800">오픈 준비 & 실행 과제 점검</h3>
-          <span class="text-xs text-brand-green font-bold bg-emerald-50 px-2.5 py-1 rounded-full" id="checklistProgress">
+      <div class="bg-white p-6 sm:p-8 rounded-3xl shadow-sm border border-gray-100">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6 border-b border-gray-100 pb-4">
+          <div>
+            <h3 class="text-base font-bold text-gray-800">오픈 준비 & 실행 과제 점검</h3>
+            <p class="text-xs text-gray-500 mt-0.5">실행 상태를 직접 체크하며 준비율을 관리해보세요.</p>
+          </div>
+          <span class="text-xs text-brand-green font-extrabold bg-emerald-50 px-3 py-1.5 rounded-full border border-emerald-200 w-fit" id="checklistProgress">
             완료율: 0% (0/5)
           </span>
         </div>
 
         <div class="space-y-3 text-xs" id="checklistGroup">
-          <label class="flex items-start gap-3 p-3 rounded-lg border border-gray-100 bg-gray-50 hover:bg-white cursor-pointer transition">
-            <input type="checkbox" class="mt-0.5 rounded text-brand-green focus:ring-brand-green" onchange="updateChecklist()">
+          <label class="flex items-start gap-3 p-3.5 rounded-xl border border-gray-100 bg-gray-50 hover:bg-white cursor-pointer transition">
+            <input type="checkbox" class="mt-0.5 rounded text-brand-green focus:ring-brand-green w-4 h-4" onchange="updateChecklist()">
             <div>
               <span class="font-bold text-gray-800">[오픈 전] 60초 쇼츠 (MV.mp4) 및 카드뉴스 6장 최종 검수</span>
               <p class="text-gray-500 text-[11px] mt-0.5">Hook 문구, 자막, 마지막 CTA 프로필 링크 연결 상태 검증</p>
             </div>
           </label>
 
-          <label class="flex items-start gap-3 p-3 rounded-lg border border-gray-100 bg-gray-50 hover:bg-white cursor-pointer transition">
-            <input type="checkbox" class="mt-0.5 rounded text-brand-green focus:ring-brand-green" onchange="updateChecklist()">
+          <label class="flex items-start gap-3 p-3.5 rounded-xl border border-gray-100 bg-gray-50 hover:bg-white cursor-pointer transition">
+            <input type="checkbox" class="mt-0.5 rounded text-brand-green focus:ring-brand-green w-4 h-4" onchange="updateChecklist()">
             <div>
               <span class="font-bold text-gray-800">[오픈 전] 피트니스 / 락커룸 / F&B 매장 포스터 및 QR 부착</span>
               <p class="text-gray-500 text-[11px] mt-0.5">이동 동선 파악 후 시선이 머무는 파우더룸 거울 인근 집중 부착</p>
             </div>
           </label>
 
-          <label class="flex items-start gap-3 p-3 rounded-lg border border-gray-100 bg-gray-50 hover:bg-white cursor-pointer transition">
-            <input type="checkbox" class="mt-0.5 rounded text-brand-green focus:ring-brand-green" onchange="updateChecklist()">
+          <label class="flex items-start gap-3 p-3.5 rounded-xl border border-gray-100 bg-gray-50 hover:bg-white cursor-pointer transition">
+            <input type="checkbox" class="mt-0.5 rounded text-brand-green focus:ring-brand-green w-4 h-4" onchange="updateChecklist()">
             <div>
               <span class="font-bold text-gray-800">[오픈 전] QR ➔ 앱 예약 주문 ➔ 파우더룸 조리 현황 연동 테스트</span>
               <p class="text-gray-500 text-[11px] mt-0.5">사전 예약 주문 후 조리 상태 변경이 파우더룸 화면에 실시간 반영되는지 확인</p>
             </div>
           </label>
 
-          <label class="flex items-start gap-3 p-3 rounded-lg border border-gray-100 bg-gray-50 hover:bg-white cursor-pointer transition">
-            <input type="checkbox" class="mt-0.5 rounded text-brand-green focus:ring-brand-green" onchange="updateChecklist()">
+          <label class="flex items-start gap-3 p-3.5 rounded-xl border border-gray-100 bg-gray-50 hover:bg-white cursor-pointer transition">
+            <input type="checkbox" class="mt-0.5 rounded text-brand-green focus:ring-brand-green w-4 h-4" onchange="updateChecklist()">
             <div>
               <span class="font-bold text-gray-800">[오픈 당일] 실제 고객 동선 리허설 및 픽업존 혼잡도 점검</span>
               <p class="text-gray-500 text-[11px] mt-0.5">운동 ➔ 샤워 ➔ 픽업 ➔ 출근 전 과정 리허설 실행</p>
             </div>
           </label>
 
-          <label class="flex items-start gap-3 p-3 rounded-lg border border-gray-100 bg-gray-50 hover:bg-white cursor-pointer transition">
-            <input type="checkbox" class="mt-0.5 rounded text-brand-green focus:ring-brand-green" onchange="updateChecklist()">
+          <label class="flex items-start gap-3 p-3.5 rounded-xl border border-gray-100 bg-gray-50 hover:bg-white cursor-pointer transition">
+            <input type="checkbox" class="mt-0.5 rounded text-brand-green focus:ring-brand-green w-4 h-4" onchange="updateChecklist()">
             <div>
               <span class="font-bold text-gray-800">[오픈 후] 성과 데이터 분석 (조회수/완주율/QR스캔/예약주문 전환)</span>
               <p class="text-gray-500 text-[11px] mt-0.5">이탈 지점 분석 후 후속 콘텐츠 재구성 및 동선 가이드 개선</p>
@@ -576,53 +633,59 @@
     <!-- 06. Funnel & Performance Diagnostic Section -->
     <section id="funnel" class="scroll-mt-20">
       <div class="flex items-center gap-2 mb-6">
-        <div class="w-2 h-6 bg-brand-green rounded-full"></div>
+        <div class="w-2.5 h-6 bg-brand-green rounded-full"></div>
         <h2 class="text-2xl font-bold text-brand-dark">06. 성과 측정 & 전환 퍼널 진단</h2>
       </div>
 
       <div class="grid lg:grid-cols-12 gap-6">
         <div class="lg:col-span-6 bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-4">
-          <h3 class="text-sm font-bold text-gray-800">캠페인 측정 퍼널 (Funnel)</h3>
+          <h3 class="text-sm font-bold text-gray-800 flex items-center gap-2">
+            <i data-lucide="bar-chart-2" class="w-4 h-4 text-brand-green"></i>
+            <span>캠페인 측정 퍼널 (Funnel)</span>
+          </h3>
           
           <div class="space-y-2 text-xs">
-            <div class="bg-emerald-800 text-white p-3 rounded-lg flex justify-between items-center">
-              <span>1. AWARENESS (인지)</span>
+            <div class="bg-emerald-900 text-white p-3.5 rounded-xl flex justify-between items-center shadow-sm">
+              <span class="font-bold">1. AWARENESS (인지)</span>
               <span class="font-mono text-emerald-200">노출수 / 쇼츠 조회수</span>
             </div>
-            <div class="bg-emerald-700 text-white p-3 rounded-lg flex justify-between items-center ml-2">
-              <span>2. INTEREST (관심)</span>
+            <div class="bg-emerald-800 text-white p-3.5 rounded-xl flex justify-between items-center ml-2 shadow-sm">
+              <span class="font-bold">2. INTEREST (관심)</span>
               <span class="font-mono text-emerald-200">저장·공유 / 완주율</span>
             </div>
-            <div class="bg-emerald-600 text-white p-3 rounded-lg flex justify-between items-center ml-4">
-              <span>3. ACTION (행동)</span>
+            <div class="bg-emerald-700 text-white p-3.5 rounded-xl flex justify-between items-center ml-4 shadow-sm">
+              <span class="font-bold">3. ACTION (행동)</span>
               <span class="font-mono text-emerald-200">QR 스캔 / 앱 유입</span>
             </div>
-            <div class="bg-brand-accent text-white p-3 rounded-lg flex justify-between items-center ml-6">
-              <span>4. CONVERSION (이용)</span>
-              <span class="font-mono text-orange-200">첫 예약 주문 / 픽업</span>
+            <div class="bg-brand-accent text-white p-3.5 rounded-xl flex justify-between items-center ml-6 shadow-sm">
+              <span class="font-bold">4. CONVERSION (이용)</span>
+              <span class="font-mono text-orange-100">첫 예약 주문 / 픽업</span>
             </div>
-            <div class="bg-purple-700 text-white p-3 rounded-lg flex justify-between items-center ml-8">
-              <span>5. RETENTION (재이용)</span>
+            <div class="bg-purple-800 text-white p-3.5 rounded-xl flex justify-between items-center ml-8 shadow-sm">
+              <span class="font-bold">5. RETENTION (재이용)</span>
               <span class="font-mono text-purple-200">재주문 / 루틴 형성</span>
             </div>
           </div>
         </div>
 
-        <div class="lg:col-span-6 bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-3">
-          <h3 class="text-sm font-bold text-gray-800">이탈 병목 데이터 진단 가이드</h3>
+        <div class="lg:col-span-6 bg-white p-6 rounded-2xl shadow-sm border border-gray-100 space-y-4">
+          <h3 class="text-sm font-bold text-gray-800 flex items-center gap-2">
+            <i data-lucide="alert-triangle" class="w-4 h-4 text-brand-accent"></i>
+            <span>이탈 병목 데이터 진단 가이드</span>
+          </h3>
           
-          <div class="space-y-2 text-xs">
-            <div class="p-3 bg-rose-50 rounded-lg border border-rose-100">
-              <span class="font-bold text-rose-700">🚨 조회수 High / 앱 유입 Low</span>
+          <div class="space-y-2.5 text-xs">
+            <div onclick="showDiagnosis(1)" class="p-3.5 bg-rose-50 rounded-xl border border-rose-100 cursor-pointer hover:bg-rose-100/60 transition">
+              <span class="font-bold text-rose-700">🚨 [상황 1] 조회수 High / 앱 유입 Low</span>
               <p class="text-gray-600 mt-1">CTA(행동유도) 및 프로필 링크, 오프라인 현장 QR 연결성 강화 필요</p>
             </div>
-            <div class="p-3 bg-amber-50 rounded-lg border border-amber-100">
-              <span class="font-bold text-amber-700">⚠️ 앱 유입 High / 예약 주문 Low</span>
+            <div onclick="showDiagnosis(2)" class="p-3.5 bg-amber-50 rounded-xl border border-amber-100 cursor-pointer hover:bg-amber-100/60 transition">
+              <span class="font-bold text-amber-700">⚠️ [상황 2] 앱 유입 High / 예약 주문 Low</span>
               <p class="text-gray-600 mt-1">앱 내 픽업시간 설정 UI 간소화 및 첫 주문 할인 쿠폰 혜택 제시</p>
             </div>
-            <div class="p-3 bg-blue-50 rounded-lg border border-blue-100">
-              <span class="font-bold text-blue-700">💡 예약 주문 High / 픽업 완료 Low</span>
-              <p class="text-gray-600 mt-1">파우더룸 실시간 조리 알림 모니터 시시각성 점검 및 동선 안내 보완</p>
+            <div onclick="showDiagnosis(3)" class="p-3.5 bg-blue-50 rounded-xl border border-blue-100 cursor-pointer hover:bg-blue-100/60 transition">
+              <span class="font-bold text-blue-700">💡 [상황 3] 예약 주문 High / 픽업 완료 Low</span>
+              <p class="text-gray-600 mt-1">파우더룸 실시간 조리 알림 모니터 가시성 점검 및 동선 안내 보완</p>
             </div>
           </div>
         </div>
@@ -632,170 +695,219 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-brand-dark text-gray-400 text-xs py-8 border-t border-gray-800 mt-12">
-    <div class="max-w-7xl mx-auto px-4 text-center space-y-2">
-      <div class="text-white font-bold text-sm tracking-widest">ROUTINE O</div>
+  <footer class="bg-brand-dark text-gray-400 text-xs py-10 border-t border-gray-800 mt-16">
+    <div class="max-w-7xl mx-auto px-4 text-center space-y-3">
+      <div class="text-white font-extrabold text-base tracking-widest">ROUTINE O</div>
       <p>F&B × FITNESS INTEGRATED CAMPAIGN PLANNER</p>
-      <p class="text-gray-500">© ROUTINE O. All rights reserved. 본 페이지는 오픈 홍보 기획서 실행용 웹 대시보드입니다.</p>
+      <p class="text-gray-500 text-[11px]">© ROUTINE O. All rights reserved. 오픈 홍보 기획서 실행용 웹 대시보드입니다.</p>
     </div>
   </footer>
 
   <!-- Scripts -->
   <script>
-    // Initialize Lucide Icons
-    lucide.createIcons();
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize Lucide Icons Safely
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
 
-    // 1. Shorts Video Control & Storyboard Sync
-    const video = document.getElementById('shortsVideo');
-    const fallback = document.getElementById('videoFallback');
-    const playBtn = document.getElementById('playBtn');
-    const muteBtn = document.getElementById('muteBtn');
-    const shortsSubtitle = document.getElementById('shortsSubtitle');
-    const shortsCurrentStage = document.getElementById('shortsCurrentStage');
+      // Initialize Video Player Handlers safely
+      initShortsPlayer();
+    });
 
-    // Storyboard Captions
-    const storyboard = [
-      { time: 0, stage: "01. HOOK (00~10s)", text: '"운동 끝나고 샐러드 나오길 초조하게 기다리다 출근길 망친 적 있으시죠?"' },
-      { time: 10, stage: "02. PRE-ORDER (10~20s)", text: '"이젠 샤워 전 앱으로 원하는 시간에 사전 주문하세요."' },
-      { time: 20, stage: "03. STATUS (20~35s)", text: '"파우더룸 화면으로 내 맞춤 건강식이 딱 맞춰 준비됩니다."' },
-      { time: 35, stage: "04. BENEFIT (35~45s)", text: '"기다림 제로! 음식이 준비되는 동안 내 정비 시간을 갖는 효율"' },
-      { time: 45, stage: "05. HEALTH (45~55s)", text: '"갓생 직장인을 위한 정교한 영양 큐레이션 식단"' },
-      { time: 55, stage: "06. BRAND (55~60s)", text: '"운동·식사·출근이 하나로! ROUTINE O"' }
+    // 1. Card News Interactive Viewer Logic
+    const cardData = [
+      {
+        tag: "CARD 1. HOOK",
+        title: "운동 후 식사 기다리다 지각할 뻔한 적 있나요?",
+        desc: "바쁜 출근길, 갓 만든 건강식을 챙기고 싶지만 조리 완료 시간을 알 수 없어 초조했던 경험. 이제 아침을 낭비하지 마세요.",
+        img: "카드뉴스1.png"
+      },
+      {
+        tag: "CARD 2. PRE-ORDER",
+        title: "샤워실 들어가기 전, 터치 한 번으로 사전 예약",
+        desc: "샤워 전 앱으로 원하는 식사와 픽업 시간을 설정하세요. 내가 정비하는 동안 음식이 맞춰 조리됩니다.",
+        img: "카드뉴스2.png"
+      },
+      {
+        tag: "CARD 3. REAL-TIME MONITOR",
+        title: "파우더룸 거울 화면에서 확인하는 실시간 조리 현황",
+        desc: "머리를 말리면서 거울 모니터로 '조리 완료' 알림을 바로 확인하세요. 핸드폰을 들여다볼 필요도 없습니다.",
+        img: "카드뉴스3.png"
+      },
+      {
+        tag: "CARD 4. ZERO-WAIT PICKUP",
+        title: "기다림 zero! 락커룸 나오자마자 갓 나온 보울 픽업",
+        desc: "동선 낭비 없이 준비된 음식을 들고 바로 출근길로 연결되는 완벽한 아침 템포.",
+        img: "카드뉴스4.png"
+      },
+      {
+        tag: "CARD 5. NUTRITION CURATION",
+        title: "갓생 직장인을 위한 100% 영양 큐레이션",
+        desc: "저당/고단백 수비드 보울과 생과일 단백질 스무디로 맛과 영양, 대사 건강을 모두 잡았습니다.",
+        img: "카드뉴스5.png"
+      },
+      {
+        tag: "CARD 6. GRAND OPEN CTA",
+        title: "지금 앱 다운로드하고 첫 루틴 할인 쿠폰 받기",
+        desc: "QR 코드를 스캔하고 당신의 아침 루틴을 완성하세요. ROUTINE O와 함께하는 스마트한 아침!",
+        img: "카드뉴스6.png"
+      }
     ];
 
-    // Check Video Source Loading
-    video.addEventListener('error', () => {
-      console.log('MV.mp4 비디오 파일이 없어 가상 시뮬레이터 모드로 전환합니다.');
-      video.classList.add('hidden');
-      fallback.classList.remove('hidden');
-      fallback.classList.add('flex');
-      initCanvasSimulator();
-    });
+    let currentCardIdx = 0;
 
-    let isPlaying = false;
-    let playInterval;
-    let currentTime = 0;
+    function updateCardUI() {
+      const card = cardData[currentCardIdx];
+      document.getElementById('cardTag').innerText = card.tag;
+      document.getElementById('cardTitle').innerText = card.title;
+      document.getElementById('cardDesc').innerText = card.desc;
+      document.getElementById('cardNewsIndex').innerText = `${currentCardIdx + 1} / ${cardData.length}`;
 
-    playBtn.addEventListener('click', () => {
-      if (video.style.display !== 'none' && !fallback.classList.contains('flex')) {
-        if (video.paused) {
-          video.play().then(() => {
-            isPlaying = true;
-            updatePlayBtnUI(true);
-          }).catch(err => {
-            showFallbackPlayer();
-          });
-        } else {
-          video.pause();
-          isPlaying = false;
-          updatePlayBtnUI(false);
-        }
-      } else {
-        // Fallback Simulator Play Toggle
-        isPlaying = !isPlaying;
-        updatePlayBtnUI(isPlaying);
-        if (isPlaying) {
-          playInterval = setInterval(() => {
-            currentTime = (currentTime + 1) % 60;
-            updateStoryboardText(currentTime);
-          }, 1000);
-        } else {
-          clearInterval(playInterval);
-        }
+      const imgElem = document.getElementById('cardImage');
+      if (imgElem) {
+        imgElem.src = card.img;
+        imgElem.alt = `카드뉴스 ${currentCardIdx + 1}`;
+        imgElem.onerror = function() {
+          this.onerror = null;
+          this.src = `https://placehold.co/600x600/2D5A43/FFFFFF?text=카드뉴스+${currentCardIdx + 1}`;
+        };
       }
-    });
+    }
+
+    function nextCard() {
+      currentCardIdx = (currentCardIdx + 1) % cardData.length;
+      updateCardUI();
+    }
+
+    function prevCard() {
+      currentCardIdx = (currentCardIdx - 1 + cardData.length) % cardData.length;
+      updateCardUI();
+    }
+
+    // 2. Shorts Video & Canvas Fallback Logic
+    let isPlaying = false;
+    let animFrameId = null;
+
+    function initShortsPlayer() {
+      const video = document.getElementById('shortsVideo');
+      const fallback = document.getElementById('videoFallback');
+      const playBtn = document.getElementById('playBtn');
+      const muteBtn = document.getElementById('muteBtn');
+      const badge = document.getElementById('playerModeBadge');
+
+      if (!video) return;
+
+      // Handle missing video source gracefully without throwing errors
+      video.onerror = function() {
+        console.warn('MV.mp4 missing or unplayable. Activating high-performance Canvas simulator.');
+        video.classList.add('hidden');
+        fallback.classList.remove('hidden');
+        if (badge) badge.innerText = 'Simulation Player';
+        initCanvasSimulator();
+      };
+
+      playBtn.addEventListener('click', () => {
+        if (!video.classList.contains('hidden') && video.readyState >= 2) {
+          if (video.paused) {
+            video.play().then(() => {
+              isPlaying = true;
+              updatePlayBtnUI(true);
+            }).catch(() => {
+              video.onerror();
+            });
+          } else {
+            video.pause();
+            isPlaying = false;
+            updatePlayBtnUI(false);
+          }
+        } else {
+          // Simulation toggle
+          isPlaying = !isPlaying;
+          updatePlayBtnUI(isPlaying);
+        }
+      });
+
+      muteBtn.addEventListener('click', () => {
+        video.muted = !video.muted;
+        if (video.muted) {
+          muteBtn.innerHTML = '<i data-lucide="volume-x" class="w-3.5 h-3.5"></i><span>음소거</span>';
+        } else {
+          muteBtn.innerHTML = '<i data-lucide="volume-2" class="w-3.5 h-3.5"></i><span>소리켜기</span>';
+        }
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+      });
+    }
 
     function updatePlayBtnUI(playing) {
+      const playBtn = document.getElementById('playBtn');
+      if (!playBtn) return;
       if (playing) {
         playBtn.innerHTML = '<i data-lucide="pause" class="w-3.5 h-3.5 fill-current"></i><span>일시정지</span>';
       } else {
         playBtn.innerHTML = '<i data-lucide="play" class="w-3.5 h-3.5 fill-current"></i><span>재생</span>';
       }
-      lucide.createIcons();
-    }
-
-    muteBtn.addEventListener('click', () => {
-      video.muted = !video.muted;
-      if (video.muted) {
-        muteBtn.innerHTML = '<i data-lucide="volume-x" class="w-3.5 h-3.5"></i><span>음소거</span>';
-      } else {
-        muteBtn.innerHTML = '<i data-lucide="volume-2" class="w-3.5 h-3.5"></i><span>소리켜기</span>';
-      }
-      lucide.createIcons();
-    });
-
-    video.addEventListener('timeupdate', () => {
-      updateStoryboardText(video.currentTime);
-    });
-
-    function updateStoryboardText(timeSec) {
-      for (let i = storyboard.length - 1; i >= 0; i--) {
-        if (timeSec >= storyboard[i].time) {
-          shortsCurrentStage.innerText = storyboard[i].stage;
-          shortsSubtitle.innerText = storyboard[i].text;
-          break;
-        }
-      }
-    }
-
-    function showFallbackPlayer() {
-      video.classList.add('hidden');
-      fallback.classList.remove('hidden');
-      fallback.classList.add('flex');
-      initCanvasSimulator();
+      if (typeof lucide !== 'undefined') lucide.createIcons();
     }
 
     function initCanvasSimulator() {
       const canvas = document.getElementById('shortsCanvas');
+      if (!canvas) return;
       const ctx = canvas.getContext('2d');
       canvas.width = 320;
       canvas.height = 568;
 
       let particles = [];
-      for(let i=0; i<25; i++){
+      for(let i = 0; i < 30; i++) {
         particles.push({
-          x: Math.random()*canvas.width,
-          y: Math.random()*canvas.height,
-          r: Math.random()*3+1,
-          dy: Math.random()*1+0.5
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          r: Math.random() * 2.5 + 1,
+          dy: Math.random() * 0.8 + 0.3
         });
       }
 
-      function draw() {
-        ctx.clearRect(0,0,canvas.width,canvas.height);
-        ctx.fillStyle = "rgba(45, 90, 67, 0.3)";
-        ctx.fillRect(0,0,canvas.width,canvas.height);
+      function render() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        // Gradient background
+        let grad = ctx.createLinearGradient(0, 0, 0, canvas.height);
+        grad.addColorStop(0, '#1C2922');
+        grad.addColorStop(1, '#0B120E');
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
+        // Animated particles
+        ctx.fillStyle = "rgba(78, 128, 98, 0.4)";
         particles.forEach(p => {
           ctx.beginPath();
-          ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
           ctx.fill();
           p.y -= p.dy;
-          if(p.y < 0) p.y = canvas.height;
+          if (p.y < 0) p.y = canvas.height;
         });
 
-        requestAnimationFrame(draw);
+        animFrameId = requestAnimationFrame(render);
       }
-      draw();
+
+      if (animFrameId) cancelAnimationFrame(animFrameId);
+      render();
     }
 
-    // 2. Interactive Simulator Logic
+    // 3. Interactive Routine Simulator Steps
     function setSimStep(step) {
       const display = document.getElementById('simDisplay');
       
-      // Update Tab Styles
       for(let i=1; i<=4; i++) {
         const tab = document.getElementById(`simTab${i}`);
         if(i === step) {
-          tab.className = "p-3 rounded-xl border border-brand-green bg-emerald-50 text-brand-green font-bold text-xs flex flex-col items-center gap-1 transition shadow-sm";
+          tab.className = "p-3 rounded-xl border border-brand-green bg-emerald-50 text-brand-green font-bold text-xs flex flex-col items-center gap-1.5 transition shadow-sm";
         } else {
-          tab.className = "p-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-500 font-semibold text-xs flex flex-col items-center gap-1 transition";
+          tab.className = "p-3 rounded-xl border border-gray-200 bg-gray-50 text-gray-500 font-semibold text-xs flex flex-col items-center gap-1.5 transition";
         }
       }
 
-      // Render Display Content
-      if(step === 1) {
+      if (step === 1) {
         display.innerHTML = `
           <div class="text-center space-y-3 max-w-md">
             <div class="w-12 h-12 bg-emerald-100 text-brand-green rounded-full flex items-center justify-center mx-auto">
@@ -806,12 +918,12 @@
               앱으로 원하는 식사(수비드 닭가슴살 보울 & 단백질 스무디)를 선택하고 <br>
               <strong>픽업 시간(08:20)</strong>을 미리 설정하여 사전 예약 주문을 넣습니다.
             </p>
-            <div class="inline-block bg-brand-green text-white text-xs font-bold px-4 py-2 rounded-lg shadow">
+            <div class="inline-block bg-brand-green text-white text-xs font-bold px-4 py-2 rounded-xl shadow">
               예약 주문 완료 (픽업 예정: 08:20)
             </div>
           </div>
         `;
-      } else if(step === 2) {
+      } else if (step === 2) {
         display.innerHTML = `
           <div class="text-center space-y-3 max-w-md">
             <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto">
@@ -822,12 +934,12 @@
               조리 기다림에 대한 초조함 없이 편안하게 샤워를 진행합니다.<br>
               그 사이 F&B 매장에서는 픽업 예정 시간에 맞춰 신선하게 조리를 진행합니다.
             </p>
-            <div class="inline-block bg-blue-600 text-white text-xs font-bold px-4 py-2 rounded-lg shadow">
+            <div class="inline-block bg-blue-600 text-white text-xs font-bold px-4 py-2 rounded-xl shadow">
               샤워 중 (시간 효율성 100% 활용)
             </div>
           </div>
         `;
-      } else if(step === 3) {
+      } else if (step === 3) {
         display.innerHTML = `
           <div class="text-center space-y-3 max-w-md">
             <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center mx-auto">
@@ -838,12 +950,12 @@
               파우더룸 거울 모니터 및 스마트워치 알림으로 <br>
               <span class="text-purple-600 font-bold">"Cooking Complete - 픽업 준비 완료"</span> 메시지를 확인합니다.
             </p>
-            <div class="inline-block bg-purple-600 text-white text-xs font-bold px-4 py-2 rounded-lg shadow">
+            <div class="inline-block bg-purple-600 text-white text-xs font-bold px-4 py-2 rounded-xl shadow">
               조리 완료 알림 수신
             </div>
           </div>
         `;
-      } else if(step === 4) {
+      } else if (step === 4) {
         display.innerHTML = `
           <div class="text-center space-y-3 max-w-md">
             <div class="w-12 h-12 bg-orange-100 text-brand-accent rounded-full flex items-center justify-center mx-auto">
@@ -854,16 +966,17 @@
               락커룸을 나와 픽업존에서 바로 준비된 건강식 보울을 들고 <br>
               여유롭고 완벽한 아침 모닝 루틴을 마치며 출근합니다.
             </p>
-            <div class="inline-block bg-brand-accent text-white text-xs font-bold px-4 py-2 rounded-lg shadow">
+            <div class="inline-block bg-brand-accent text-white text-xs font-bold px-4 py-2 rounded-xl shadow">
               갓생 출근 성공!
             </div>
           </div>
         `;
       }
-      lucide.createIcons();
+
+      if (typeof lucide !== 'undefined') lucide.createIcons();
     }
 
-    // 3. Checklist Progress Tracking
+    // 4. Checklist Progress Tracker
     function updateChecklist() {
       const checkboxes = document.querySelectorAll('#checklistGroup input[type="checkbox"]');
       let checkedCount = 0;
@@ -872,6 +985,17 @@
       });
       const percent = Math.round((checkedCount / checkboxes.length) * 100);
       document.getElementById('checklistProgress').innerText = `완료율: ${percent}% (${checkedCount}/${checkboxes.length})`;
+    }
+
+    // 5. Interactive Funnel Diagnosis
+    function showDiagnosis(num) {
+      const msgs = [
+        "",
+        "💡 [처방 1] 콘텐츠의 흥미 유발은 성공했으나 앱 다운로드 링크 위치가 약합니다. 파우더룸 QR 크기를 키우고 첫 주문 2,000원 할인 프로모션을 썸네일에 전면 배치하세요.",
+        "💡 [처방 2] 유입은 되었으나 결제 전 이탈합니다. 픽업 시간 선택 UI를 2단계로 단순화하고 '샤워 시작 10분 전 자동 추천' 버튼을 신설하세요.",
+        "💡 [처방 3] 주문은 완료되나 현장 수령 단계에서 혼잡이 발생합니다. 파우더룸 모니터 번호 알림 소리를 강화하고 픽업 전용 라인을 별도 표기하세요."
+      ];
+      alert(msgs[num]);
     }
   </script>
 </body>
